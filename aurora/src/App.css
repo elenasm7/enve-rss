@@ -2,26 +2,68 @@
   text-align: center;
 }
 
-.first {
+.source {
+	width: 90%;
+	height: 60px;
+	text-decoration: none;
+	border: none;
+	border-radius: 5px;
+	margin: 10px;
+	color: white;
+	font-family: Helvetica;
+	font-size: 18pt;
+}
+
+#first {
   background-color: #F05D5E;
 }
 
-.second {
+#second {
   background-color: #4392F1;
 }
 
-.third {
+#third {
   background-color: #5BC0EB;
 }
 
-.fourth {
+#fourth {
   background-color: #5DD9C1;
 }
 
-.fifth {
+#fifth {
   background-color: #73FBD3;
 }
 
-.six {
+#sixth {
   background-color: #FC9F5B;
+}
+
+.source-list {
+	position: fixed;
+	height: 100%;
+	width: 30%;
+	float: right;
+	background-color: #FE1469;
+	display: inline-block;
+	left: 0;
+	top: 0;
+}
+
+.reader {
+	position: fixed;
+	float: left;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 70%;
+	background-color: #fff;
+	font-family: Avenir Next;
+}
+
+.break {
+	clear: both;
+}
+
+.article {
+	margin: 30px;
 }

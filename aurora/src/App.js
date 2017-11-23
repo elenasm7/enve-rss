@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -7,7 +6,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      "count": 0
+      "count": 0,
+      "readerText": "Elena Morais: I’m leaving my place now Matchers I went to Portugal in my dream last night and cried when i saw my aunt cause she’s the one who picks me up from the airport lol Komran Ghahremani: Haha would you in real life Elena Morais: Maybe haha definitely with my other aunts, not positive with Isabel, but i think so In my dream i was also really excited about your gift idea lol we were hanging out with regy and i asked his opinion and then of course you had to walk into the room so i was scared you heard, i can’t remember if a murder took place in the other chapter of my dream? Feel like it did"
     };
   }
 
@@ -18,12 +18,38 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <button className="first" onClick={this.increment}>{this.state.count}</button>
-        <button className="second" onClick={this.increment}>{this.state.count}</button>
-        <button className="third" onClick={this.increment}>{this.state.count}</button>
-        <button className="fourth" onClick={this.increment}>{this.state.count}</button>
-        <button className="five" onClick={this.increment}>{this.state.count}</button>
-        <button className="six" onClick={this.increment}>{this.state.count}</button>
+        <div className="source-list">
+          <button className="source" id="first" onClick={this.increment}>LBSTRS</button>
+          <button className="source" id="second" onClick={this.increment}>VERGE</button>
+          <button className="source" id="third" onClick={this.increment}>MASHABLE</button>
+          <button className="source" id="fourth" onClick={this.increment}>HTTPSTER</button>
+          <button className="source" id="fifth" onClick={this.increment}>MEDIUM</button>
+          <button className="source" id="sixth" onClick={this.increment}>PTTRNS</button>
+          <button className="source" id="first" onClick={this.increment}>LBSTRS</button>
+          <button className="source" id="second" onClick={this.increment}>VERGE</button>
+          <button className="source" id="third" onClick={this.increment}>MASHABLE</button>
+          <button className="source" id="fourth" onClick={this.increment}>HTTPSTER</button>
+          <button className="source" id="fifth" onClick={this.increment}>MEDIUM</button>
+          <button className="source" id="sixth" onClick={this.increment}>PTTRNS</button>
+          <button className="source" id="first" onClick={this.increment}>LBSTRS</button>
+          <button className="source" id="second" onClick={this.increment}>VERGE</button>
+          <button className="source" id="third" onClick={this.increment}>MASHABLE</button>
+          <button className="source" id="fourth" onClick={this.increment}>HTTPSTER</button>
+          <button className="source" id="fifth" onClick={this.increment}>MEDIUM</button>
+          <button className="source" id="sixth" onClick={this.increment}>PTTRNS</button>
+          <button className="source" id="first" onClick={this.increment}>LBSTRS</button>
+          <button className="source" id="second" onClick={this.increment}>VERGE</button>
+          <button className="source" id="third" onClick={this.increment}>MASHABLE</button>
+          <button className="source" id="fourth" onClick={this.increment}>HTTPSTER</button>
+          <button className="source" id="fifth" onClick={this.increment}>MEDIUM</button>
+          <button className="source" id="sixth" onClick={this.increment}>PTTRNS</button>
+        </div>
+        <div className="break" />
+        <div className="reader">
+          <div className="article">
+            {this.state.readerText}
+          </div>
+        </div>
       </div>
     );
   }
