@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  position: relative;
+  width: 98%;
+}
+
+.navbar {
+	height: 30px;
+	background-color: blue;
 }
 
 .source {
@@ -39,25 +46,43 @@
 }
 
 .source-list {
-	position: fixed;
-	height: 100%;
 	width: 30%;
-	float: right;
-	background-color: #FE1469;
-	display: inline-block;
+	height: 100vh;
+	float: left;
+	top: 30px;
 	left: 0;
-	top: 0;
+	background-color: #FE1469;
+	overflow: scroll;
+}
+
+.source-list ul {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+.source-list li {
+	margin: 0 auto;
+	width: 70%;
+	margin-bottom: 6px;
+	padding: 6px 0;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	background-color: #FC9F5B;
+	border: 2px solid white;
 }
 
 .reader {
-	position: fixed;
-	float: left;
-	top: 0;
-	right: 0;
-	height: 100%;
-	width: 70%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	flex: 1 0 70%;
+	height: 100vh;
+	margin-left: 30%;
 	background-color: #fff;
 	font-family: Avenir Next;
+	overflow: scroll;
 }
 
 .break {

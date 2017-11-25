@@ -19,32 +19,51 @@ class App extends Component {
     return (
       <div className="App">
         <div className="source-list">
-          <button className="source" id="first" onClick={this.increment}>LBSTRS</button>
-          <button className="source" id="second" onClick={this.increment}>VERGE</button>
-          <button className="source" id="third" onClick={this.increment}>MASHABLE</button>
-          <button className="source" id="fourth" onClick={this.increment}>HTTPSTER</button>
-          <button className="source" id="fifth" onClick={this.increment}>MEDIUM</button>
-          <button className="source" id="sixth" onClick={this.increment}>PTTRNS</button>
-          <button className="source" id="first" onClick={this.increment}>LBSTRS</button>
-          <button className="source" id="second" onClick={this.increment}>VERGE</button>
-          <button className="source" id="third" onClick={this.increment}>MASHABLE</button>
-          <button className="source" id="fourth" onClick={this.increment}>HTTPSTER</button>
-          <button className="source" id="fifth" onClick={this.increment}>MEDIUM</button>
-          <button className="source" id="sixth" onClick={this.increment}>PTTRNS</button>
-          <button className="source" id="first" onClick={this.increment}>LBSTRS</button>
-          <button className="source" id="second" onClick={this.increment}>VERGE</button>
-          <button className="source" id="third" onClick={this.increment}>MASHABLE</button>
-          <button className="source" id="fourth" onClick={this.increment}>HTTPSTER</button>
-          <button className="source" id="fifth" onClick={this.increment}>MEDIUM</button>
-          <button className="source" id="sixth" onClick={this.increment}>PTTRNS</button>
-          <button className="source" id="first" onClick={this.increment}>LBSTRS</button>
-          <button className="source" id="second" onClick={this.increment}>VERGE</button>
-          <button className="source" id="third" onClick={this.increment}>MASHABLE</button>
-          <button className="source" id="fourth" onClick={this.increment}>HTTPSTER</button>
-          <button className="source" id="fifth" onClick={this.increment}>MEDIUM</button>
-          <button className="source" id="sixth" onClick={this.increment}>PTTRNS</button>
+          <ul>
+            <li>
+              <button className="source" id="first" onClick={this.increment}>LBSTRS</button>
+            </li>
+            <li>
+              <button className="source" id="second" onClick={this.increment}>VERGE</button>
+            </li>
+            <li>
+              <button className="source" id="third" onClick={this.increment}>MASHABLE</button>
+            </li>
+            <li>
+             <button className="source" id="fourth" onClick={this.increment}>HTTPSTER</button>
+            </li>
+            <li>
+              <button className="source" id="fifth" onClick={this.increment}>MEDIUM</button>
+            </li>
+            <li>
+              <button className="source" id="sixth" onClick={this.increment}>PTTRNS</button>
+            </li>
+            <li>
+              <button className="source" id="first" onClick={this.increment}>LBSTRS</button>
+            </li>
+            <li>
+              <button className="source" id="first" onClick={this.increment}>LBSTRS</button>
+            </li>
+            <li>
+              <button className="source" id="second" onClick={this.increment}>VERGE</button>
+            </li>
+            <li>
+              <button className="source" id="third" onClick={this.increment}>MASHABLE</button>
+            </li>
+            <li>
+             <button className="source" id="fourth" onClick={this.increment}>HTTPSTER</button>
+            </li>
+            <li>
+              <button className="source" id="fifth" onClick={this.increment}>MEDIUM</button>
+            </li>
+            <li>
+              <button className="source" id="sixth" onClick={this.increment}>PTTRNS</button>
+            </li>
+            <li>
+              <button className="source" id="first" onClick={this.increment}>LBSTRS</button>
+            </li>
+          </ul>
         </div>
-        <div className="break" />
         <div className="reader">
           <div className="article">
             {this.state.readerText}
