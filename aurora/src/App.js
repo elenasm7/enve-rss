@@ -7,7 +7,7 @@ class App extends Component {
 
     this.state = {
       "count": 0,
-      "readerArticle": "https://mdn-samples.mozilla.org/snippets/html/iframe-simple-contents.html"
+      "readerArticle": "https://www.utilitydive.com/news/with-artificial-intelligence-its-a-brave-new-world-for-utilities/511008/"
     };
   }
 
@@ -65,7 +65,7 @@ class App extends Component {
           </ul>
         </div>
         <div className="reader">
-          <iframe className="article" src={this.state.readerArticle}></iframe>
+          <iframe className="article" scrolling="yes" frameborder="0" allowfullscreen title={this.state.readerArticle} src={this.state.readerArticle}></iframe>
         </div>
       </div>
     );
