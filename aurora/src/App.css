@@ -19,6 +19,7 @@
 	color: white;
 	font-family: Helvetica;
 	font-size: 18pt;
+	cursor: pointer;
 }
 
 #first {
@@ -46,7 +47,7 @@
 }
 
 .source-list {
-	width: 30%;
+	width: 25%;
 	height: 100vh;
 	float: left;
 	top: 30px;
@@ -71,6 +72,22 @@
 	text-align: center;
 	background-color: #FC9F5B;
 	border: 2px solid white;
+}
+
+.article-list {
+	width: 15%;
+	height: 100vh;
+	float: left;
+	top: 30px;
+	left: 0;
+	background-color: #FE1469;
+	overflow: scroll;
+}
+
+.article-list ul {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
 }
 
 .reader {

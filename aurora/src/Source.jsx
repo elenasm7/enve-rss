@@ -2,18 +2,14 @@ import React, { Component } from 'react';
 import './Source.css';
 
 class Source extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			name: "Sherwin"
-		};
-	}
+	updateArticleComponent = () => {
+      this.props.updateArticle(this.props.url);
+  	};
 
 	render() {
 		return (
-			<div className="source-container">
-				
+			<div>
+				<button className="source" onClick={this.updateArticleComponent} id="first">{this.props.name}</button>
 			</div>
 		);
 	}
