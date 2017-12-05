@@ -9,15 +9,13 @@ class App extends Component {
     super(props);
 
     this.state = {
-      'count': 0,
-      'readerArticle': "http://www.utilitydive.com/news/with-artificial-intelligence-its-a-brave-new-world-for-utilities/511008/",
-      'sources': 
+      'currentArticle': "http://www.utilitydive.com/news/with-artificial-intelligence-its-a-brave-new-world-for-utilities/511008/",
+      'sources':
       [
         {
           'id': 'first', 
           'name': 'EIA', 
           'readerArticle': 'https://www.eia.gov'
-
         },
         { 
           'id': 'second', 
@@ -57,19 +55,22 @@ class App extends Component {
     };
   }
 
-  updateArticle = (url) => {
-      this.setState({ "readerArticle": url });
-  };
-
+  // the job of the source
   updateStories = (stories) => {
       this.setState({"stories": stories});
   };
 
+  // the job of the story
+  updateArticle = (url) => {
+      this.setState({ "readerArticle": url });
+  };
+
   render() {
+    // the objective of these blocks is to create the series of list items of those types (sources & stories)
     let sources = this.state.sources.map((source) => {
         return (
           <li key={source.name}>
-              <Source updateStoriesProp={this.updateStories} name={source.name} url={source.readerArticle} />
+              <Source updateStoriesProp={this.updateStories} name={source.name} />
           </li> 
         );
       }
@@ -83,6 +84,7 @@ class App extends Component {
       );
     });
 
+    // iframe takes src prop to say what website to render inside aka whatever is in this.state.currentArticle
     return (
       <div className="App">
         <div className="source-list">
@@ -96,7 +98,7 @@ class App extends Component {
           </ul>
         </div>
         <div className="reader">
-          <iframe className="article" scrolling="yes" frameBorder="0" allowFullScreen title={this.state.readerArticle} src={this.state.readerArticle}></iframe>
+          <iframe className="article" scrolling="yes" frameBorder="0" allowFullScreen title={this.state.currentArticle} src={this.state.currentArticle}></iframe>
         </div>
       </div>
     );
