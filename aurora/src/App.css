@@ -90,6 +90,18 @@
 	list-style: none;
 }
 
+.article-list li {
+	margin: 0 auto;
+	width: 70%;
+	margin-bottom: 6px;
+	padding: 6px 0;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	background-color: #FC9F5B;
+	border: 2px solid white;
+}
+
 .reader {
 	display: flex;
 	flex-wrap: wrap;

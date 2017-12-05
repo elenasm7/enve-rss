@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Source from './Source.jsx';
+import Story from './Story.jsx';
 import './App.css';
+
 
 class App extends Component {
   constructor(props) {
@@ -15,6 +17,7 @@ class App extends Component {
           'id': 'first', 
           'name': 'EIA', 
           'readerArticle': 'https://www.eia.gov'
+
         },
         { 
           'id': 'second', 
@@ -49,7 +52,8 @@ class App extends Component {
           'name': 'Medium1', 
           'readerArticle': 'https://medium.com/natural-resources-defense-council/the-big-lie-behind-the-trump-assault-on-our-environment-and-health-854b20051da7'
         }
-      ]
+      ], 
+      'stories': []    
     };
   }
 
@@ -57,11 +61,24 @@ class App extends Component {
       this.setState({ "readerArticle": url });
   };
 
+  updateStories = (stories) => {
+      this.setState({"stories": stories});
+  };
+
   render() {
     let sources = this.state.sources.map((source) => {
+        return (
+          <li key={source.name}>
+              <Source updateStoriesProp={this.updateStories} name={source.name} url={source.readerArticle} />
+          </li> 
+        );
+      }
+    );
+
+    let stories = this.state.stories.map((story) => {
       return (
-        <li key={source.name}>
-          <Source updateArticle={this.updateArticle} name={source.name} url={source.readerArticle} />
+        <li key={story.name}>
+          <Story updateArticle={this.updateArticle} name={story.name} url={story.readerArticle}/>
         </li> 
       );
     });
@@ -75,7 +92,7 @@ class App extends Component {
         </div>
         <div className="article-list">
           <ul>
-            //these will be the stories
+            {stories}
           </ul>
         </div>
         <div className="reader">
