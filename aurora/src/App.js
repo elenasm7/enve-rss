@@ -62,7 +62,7 @@ class App extends Component {
 
   // the job of the story
   updateArticle = (url) => {
-      this.setState({ "readerArticle": url });
+      this.setState({ "currentArticle": url });
   };
 
   render() {
