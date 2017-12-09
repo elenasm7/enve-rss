@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Story.css';
+import './App.css';
 
 class Story extends Component {
 	updateArticleComponent = () => {
@@ -8,8 +8,9 @@ class Story extends Component {
 
 	render() {
 		return (
-			<div>
-				<button className="source" onClick={this.updateArticleComponent} id="first">{this.props.name}</button>
+			<div className="story" onClick={this.updateArticleComponent} >
+				<h3 className="source">{this.props.name}</h3>
+				<p className="time">{this.props.subtitle} | {this.props.author}</p>
 			</div>
 		);
 	}

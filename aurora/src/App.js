@@ -20,7 +20,7 @@ class App extends Component {
         { 
           'id': 'second', 
           'name': 'The Guardian Environment', 
-          'readerArticle': 'https://www.theguardian.com/technology/2017/nov/27/bitcoin-mining-consumes-electricity-ireland'
+          'readerArticle': 'https://www.theguardian.com/australia-news/2017/dec/09/agl-snubs-coalition-with-decision-to-shut-down-liddell-plant'
         },
         { 
           'id': 'third', 
@@ -79,7 +79,7 @@ class App extends Component {
     let stories = this.state.stories.map((story) => {
       return (
         <li key={story.name}>
-          <Story updateArticle={this.updateArticle} name={story.name} url={story.readerArticle}/>
+          <Story updateArticle={this.updateArticle} name={story.name} subtitle={story.subtitle} author={story.author} url={story.readerArticle}/>
         </li> 
       );
     });
