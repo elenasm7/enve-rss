@@ -13,17 +13,17 @@ class App extends Component {
       'sources':
       [
         {
-          'id': 'first', 
-          'name': 'EIA', 
+          'id': 'eia', 
+          'name': 'eia', 
           'readerArticle': 'https://www.eia.gov'
         },
         { 
-          'id': 'second', 
+          'id': 'guardian', 
           'name': 'The Guardian Environment', 
           'readerArticle': 'https://www.theguardian.com/australia-news/2017/dec/09/agl-snubs-coalition-with-decision-to-shut-down-liddell-plant'
         },
         { 
-          'id': 'third', 
+          'id': 'iea', 
           'name': 'IEA', 
           'readerArticle': 'https://www.iea.org'
         },
@@ -70,7 +70,7 @@ class App extends Component {
     let sources = this.state.sources.map((source) => {
         return (
           <li key={source.name}>
-              <Source updateStoriesProp={this.updateStories} name={source.name} />
+              <Source updateStoriesProp={this.updateStories} name={source.name} id={source.id} />
           </li> 
         );
       }
@@ -87,6 +87,9 @@ class App extends Component {
     // iframe takes src prop to say what website to render inside aka whatever is in this.state.currentArticle
     return (
       <div className="App">
+        <div className="header">
+          aurora
+        </div>
         <div className="source-list">
           <ul>
             {sources}

@@ -9,20 +9,20 @@ class Source extends Component {
 			'stories': 
 			[
 			  {
-			    'id': 'first', 
+			    'id': 'eia', 
 			    'name': 'The EIA Energy Efficiency Indicators Database', 
 			    'subtitle': '34 minutes ago',
 			    'author': 'Elena Morais',
 			    'readerArticle': 'https://www.eia.gov'
 			  },
 			  { 
-			    'id': 'second', 
+			    'id': 'guardian', 
 			    'name': 'EIA-2', 
 			    'subtitle': '34 minutes ago',
 			    'readerArticle': 'https://www.theguardian.com/technology/2017/nov/27/bitcoin-mining-consumes-electricity-ireland'
 			  },
 			  { 
-			    'id': 'third', 
+			    'id': 'iea', 
 			    'name': 'EIA-3', 
 			    'subtitle': '34 minutes ago',
 			    'readerArticle': 'https://www.iea.org'
@@ -80,8 +80,8 @@ class Source extends Component {
 
 	render() {
 		return (
-			<div>
-				<button className="source" onClick={this.updateStories} id="first">{this.props.name}</button>
+			<div className="source-container">
+				<button className="source" onClick={this.updateStories} id={this.props.id}>{this.props.name}</button>
 			</div>
 		);
 	}

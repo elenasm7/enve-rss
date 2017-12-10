@@ -8,8 +8,8 @@ class Story extends Component {
 
 	render() {
 		return (
-			<div className="story" onClick={this.updateArticleComponent} >
-				<h3 className="source">{this.props.name}</h3>
+			<div className="story-container" onClick={this.updateArticleComponent} >
+				<div className="story-title">{this.props.name}</div>
 				<p className="time">{this.props.subtitle} | {this.props.author}</p>
 			</div>
 		);
