@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import * as firebase from 'firebase';
 import Source from './Source.jsx';
 import Story from './Story.jsx';
 import './App.css';
-
 
 class App extends Component {
   constructor(props) {
@@ -10,49 +10,15 @@ class App extends Component {
 
     this.state = {
       'currentArticle': "http://www.utilitydive.com/news/with-artificial-intelligence-its-a-brave-new-world-for-utilities/511008/",
-      'sources':
-      [
-        {
-          'id': 'eia', 
-          'name': 'eia', 
-          'readerArticle': 'https://www.eia.gov'
-        },
-        { 
-          'id': 'guardian', 
-          'name': 'The Guardian Environment', 
-          'readerArticle': 'https://www.theguardian.com/australia-news/2017/dec/09/agl-snubs-coalition-with-decision-to-shut-down-liddell-plant'
-        },
-        { 
-          'id': 'iea', 
-          'name': 'IEA', 
-          'readerArticle': 'https://www.iea.org'
-        },
-        { 'id': 'fourth', 
-          'name': 'Medium', 
-          'readerArticle': 'https://medium.com/natural-resources-defense-council/the-big-lie-behind-the-trump-assault-on-our-environment-and-health-854b20051da7'
-        },
-        { 'id': 'fifth', 
-          'name': 'Medium4', 
-          'readerArticle': 'https://medium.com/natural-resources-defense-council/the-big-lie-behind-the-trump-assault-on-our-environment-and-health-854b20051da7'
-        },
-        { 
-          'id': 'sixth', 
-          'name': 'Medium3', 
-          'readerArticle': 'https://medium.com/natural-resources-defense-council/the-big-lie-behind-the-trump-assault-on-our-environment-and-health-854b20051da7'
-        },
-        { 
-          'id': 'seventh', 
-          'name': 'Medium2', 
-          'readerArticle': 'https://medium.com/natural-resources-defense-council/the-big-lie-behind-the-trump-assault-on-our-environment-and-health-854b20051da7'
-        },
-        { 
-          'id': 'eighth', 
-          'name': 'Medium1', 
-          'readerArticle': 'https://medium.com/natural-resources-defense-council/the-big-lie-behind-the-trump-assault-on-our-environment-and-health-854b20051da7'
-        }
-      ], 
+      'sources': [], 
       'stories': []    
     };
+
+    const dbRef = firebase.database().ref().child('sources');
+    dbRef.on('value',  (snap) => {
+      console.log(snap.val())
+      this.setState({ "sources": snap.val() });
+    });
   }
 
   // the job of the source

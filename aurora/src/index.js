@@ -6,13 +6,13 @@ import registerServiceWorker from './registerServiceWorker';
 import * as firebase from 'firebase';
 
 var config = {
-    apiKey: "AIzaSyBpDihzMW3V4I6xnBqAKp25ApzaGegWxJY",
-    authDomain: "aurora-10876.firebaseapp.com",
-    databaseURL: "https://aurora-10876.firebaseio.com",
-    projectId: "aurora-10876",
-    storageBucket: "aurora-10876.appspot.com",
-    messagingSenderId: "974855681516"
-};
+    apiKey: "AIzaSyBJMNd2b5TzkYZDIr80fh14csCCXci71LY",
+    authDomain: "aurora-dbe5d.firebaseapp.com",
+    databaseURL: "https://aurora-dbe5d.firebaseio.com",
+    projectId: "aurora-dbe5d",
+    storageBucket: "aurora-dbe5d.appspot.com",
+    messagingSenderId: "947777917891"
+  };
 firebase.initializeApp(config);
 
 ReactDOM.render(<App />, document.getElementById('root'));
