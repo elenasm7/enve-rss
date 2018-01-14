@@ -17,13 +17,13 @@ class Source extends Component {
 			  },
 			  { 
 			    'id': 'guardian', 
-			    'name': 'EIA-2', 
+			    'name': 'High-speed rail presents major opportunities for decarbonisation of transport', 
 			    'subtitle': '34 minutes ago',
 			    'readerArticle': 'https://www.theguardian.com/technology/2017/nov/27/bitcoin-mining-consumes-electricity-ireland'
 			  },
 			  { 
 			    'id': 'iea', 
-			    'name': 'EIA-3', 
+			    'name': 'World Energy Outlook 2017: China', 
 			    'subtitle': '34 minutes ago',
 			    'readerArticle': 'https://www.iea.org'
 			  },
