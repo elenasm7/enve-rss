@@ -84,6 +84,36 @@ class App extends Component {
       );
     });
 
+    function load() {
+      var document = 'App.js';
+      var prg = document.getElementById('bar');
+      var width = 1;
+      var id = setInterval(id);
+
+      function frame(){
+        if (width >= 100) {
+          clearInterval(id);
+        } else {
+          width ++;
+          prg.style.width = width + '%';
+        }
+      };
+    };
+
+    //progress bar
+    /*function progressCondition(){
+      var document = 'App.js';
+      var prg = document.getElementById('bar');
+      var width = 1;
+      var id = setInterval(id);
+      var name = document.getElementById("progressBar");
+      if (width >= 100) {
+        name = "progressBar-Inactive"
+      } else {
+        name = "progressBar"
+      }
+    };*/
+
     // iframe takes src prop to say what website to render inside aka whatever is in this.state.currentArticle
     return (
       <div className="App">
@@ -106,6 +136,7 @@ class App extends Component {
       </div>
     );
   }
+
 }
 
 export default App;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
+
 class Story extends Component {
 	updateArticleComponent = () => {
       this.props.updateArticle(this.props.url);

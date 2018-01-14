@@ -181,6 +181,22 @@
 	padding: 0;
 }
 
+
+.progressBar{
+	width: 100%;
+	background-color: white;
+}
+
+.progressBar-inactive{
+	display: none;
+}
+
+.bar {
+	width: 1%;
+	height: 2px;
+	background-color: #07C199
+}
+
 .break {
 	clear: both;
 }
