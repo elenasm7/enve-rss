@@ -10,6 +10,7 @@
 
 .header {
 	height: 50px;
+	flex-basis: 100%;
 	background-color: white;
 	text-align: left;
 	color: #07C199;
@@ -23,19 +24,18 @@
 /* sources */ 
 
 .source-list {
-	width: 100%;
-	height: 150px;
-	float: left;
+	flex-basis: 100%;
+	height: 125px;
 	top: 30px;
 	left: 0;
 	background-color: white;
 	overflow: scroll;
 	display: flex;
-	justify-content: space-around;
-	
+	justify-content: flex-start;
 }
 
 .source-list ul {
+	margin-top: 5px;
 	margin-left: 0;
 	padding: 0;
 	list-style: none;
@@ -50,10 +50,7 @@
 	margin-bottom: 12px;
 	color: white;
 	font-weight: bold;
-	flex-basis: 12.5%;
-	padding-left: 20px;
-
-
+	flex: 1 0 auto;
 }
 
 .source {
@@ -119,6 +116,7 @@
 .inner-body {
 	display: flex; 
 	flex-direction: row;
+	justify-content: flex-start;
 }
 
 /*article list */
@@ -126,9 +124,8 @@
 .article-list {
 	display: flex;
 	flex-direction: column;
-	width: 25%;
+	flex-basis: 25%;
 	height: 100vh;
-	float: left;
 	top: 30px;
 	left: 0;
 	background-color: #fff;
@@ -222,9 +219,6 @@
 	height: 100%;
 	width: 100% !important;
 }
-
-
-
 
 
 
