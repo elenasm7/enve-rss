@@ -36,7 +36,7 @@ class App extends Component {
     let sources = this.state.sources.map((source) => {
         return (
           <li key={source.name}>
-              <Source updateStoriesProp={this.updateStories} name={source.name} id={source.id} />
+              <Source updateStoriesProp={this.updateStories} stories={source.stories} name={source.name} id={source.id}/>
           </li> 
         );
       }
@@ -91,13 +91,15 @@ class App extends Component {
             {sources}
           </ul>
         </div>
-        <div className="article-list">
-          <ul>
-            {stories}
-          </ul>
-        </div>
-        <div className="reader">
-          <iframe className="article" scrolling="yes" frameBorder="0" allowFullScreen title={this.state.currentArticle} src={this.state.currentArticle}></iframe>
+        <div className="inner-body">
+          <div className="article-list">
+            <ul>
+              {stories}
+            </ul>
+          </div>
+          <div className="reader">
+            <iframe className="article" scrolling="yes" frameBorder="0" allowFullScreen title={this.state.currentArticle} src={this.state.currentArticle}></iframe>
+          </div>
         </div>
       </div>
     );
