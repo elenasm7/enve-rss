@@ -5,9 +5,13 @@
   "dependencies": {
     "firebase": "^4.8.1",
     "jquery": "^3.2.1",
+    "moment": "^2.22.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "react-slick": "^0.23.1",
+    "rss-to-json": "^1.0.4",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",

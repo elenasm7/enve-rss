@@ -20,11 +20,31 @@ class App extends Component {
       'sources': [], 
       'stories': [],
       'feedsources': [
-        'utilitydive':'https://www.utilitydive.com/feeds/news/',
-        'theguardian':'https://www.theguardian.com/us/environment/rss',
-        'WRI':'http://feeds.feedburner.com/WRI_News_and_Views',
-        'NRDC':'https://www.nrdc.org/rss.xml',
-        'sciencedaily':'https://www.sciencedaily.com/rss/top/environment.xml'    
+          {
+            'id': 1,
+            'name': 'utilitydive',
+            'url': 'https://www.utilitydive.com/feeds/news/'
+          },
+          {
+            'id': 2,
+            'name': 'theguardian',
+            'url': 'https://www.theguardian.com/us/environment/rss'
+          },
+          {
+            'id': 3,
+            'name': 'WRI',
+            'url': 'http://feeds.feedburner.com/WRI_News_and_Views'
+          },
+          {
+            'id': 4,
+            'name': 'NRDC',
+            'url': 'https://www.nrdc.org/rss.xml'
+          },
+          {
+            'id': 5,
+            'name': 'sciencedaily',
+            'url': 'https://www.sciencedaily.com/rss/top/environment.xml'
+          }
         ]
     };
 
@@ -46,15 +66,15 @@ class App extends Component {
   };
 
 
-  loadfeedsources = (name, url) => {
-    Feed.load(url, function(err, rss) {
-      let feedsources = rss.items.map((item) => {
+  loadfeedsources = (source) => {
+    Feed.load(source.url, function(err, rss) {
+      return (rss.items.map((item) => {
         return (
-          <li key={feedsources.name}>
-            <FeedSource updateStoriesProp={this.updateStories} stories={feedsources.url} name={feedsources.name} id={feedsources.id}/>
+          <li key={source.name}>
+            <FeedSource updateStoriesProp={this.updateStories} stories={source.url} name={source.name} id={source.id}/>
           </li>
         )
-      });
+      }));
     })
   };
 
@@ -78,12 +98,12 @@ class App extends Component {
   render() {
 
 
-    let feedsources = this.state.feedsources.map((name, feedsource) => {
-      return(
-        <div>
-          {feedsources.loadfeedsources(name, feedsource)}
-        </div>
-      )
+    let feedsources = Object.keys(this.state.feedsources).map((feedsource) => { 
+        return (
+          <div>
+            {this.loadfeedsources(feedsource)}
+          </div>
+        )
     });
 
     /*
@@ -91,13 +111,13 @@ class App extends Component {
       in the feedsources part. 
     */
 
-    let feedstories = this.state.feedsources.map((name, feedstory) => {
-      return(
-        <div className="slide-list">
-          {feedstories.loadRssStories(name, feedstory)}
-        </div>
-      )
-    });
+    // let feedstories = Object.keys(this.state.feedstories).map((name, feedstory) => {
+    //     return(
+    //       <div className="slide-list">
+    //         {this.loadRssStories(name, feedstory)}
+    //       </div>
+    //     )
+    // });
     
 
     //the objective of these blocks is to create the series of list items of those types (sources & stories)
@@ -142,6 +162,7 @@ class App extends Component {
         <div className="source-list">
           <Slider {...settings}>
             {sources}
+            {feedsources}
           </Slider>
         </div>
         <div className="inner-body">
