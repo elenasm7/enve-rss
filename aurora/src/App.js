@@ -98,7 +98,7 @@ class App extends Component {
   render() {
 
 
-    let feedsources = Object.keys(this.state.feedsources).map((feedsource) => { 
+    let feedsources = this.state.feedsources.map((feedsource) => { 
         return (
           <div>
             {this.loadfeedsources(feedsource)}
