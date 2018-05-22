@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 
-class Story extends Component {
+class FeedStory extends Component {
+
 	updateArticleComponent = () => {
-      this.props.updateArticle(this.props.url);
+      this.props.updateArticle(this.props.feedsources.items);
   	};
 
 	render() {
@@ -17,7 +18,4 @@ class Story extends Component {
 	}
 }
 
-
-
-
-export default Story;
+export default FeedStory;
