@@ -3,14 +3,14 @@ import './App.css';
 
 class FeedSource extends Component {
 
-	udateStories = () => {
+	updateStories = () => {
 		this.props.updateStoriesProp(this.props.feedsource);
 	};
 
 	render() {
 		return (
 			<div className="source-container">
-				<button className="feedsource" onClick={this.updateStories} id={this.props.id}>{this.props.name}</button>
+				<button className="source" onClick={this.updateStories} id={this.props.id}>{this.props.name}</button>
 			</div>
 		);
 	}

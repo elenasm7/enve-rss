@@ -21,29 +21,29 @@ class App extends Component {
       'stories': [],
       'feedsources': [
           {
-            'id': 1,
+            'id': 'sixth',
             'name': 'utilitydive',
-            'url': 'https://www.utilitydive.com/feeds/news/'
+            'url': 'http://www.utilitydive.com/feeds/news/'
           },
           {
-            'id': 2,
+            'id': 'sixth',
             'name': 'theguardian',
-            'url': 'https://www.theguardian.com/us/environment/rss'
+            'url': 'http://www.theguardian.com/us/environment/rss'
           },
           {
-            'id': 3,
+            'id': 'sixth',
             'name': 'WRI',
             'url': 'http://feeds.feedburner.com/WRI_News_and_Views'
           },
           {
-            'id': 4,
+            'id': 'sixth',
             'name': 'NRDC',
-            'url': 'https://www.nrdc.org/rss.xml'
+            'url': 'http://www.nrdc.org/rss.xml'
           },
           {
-            'id': 5,
+            'id': 'sixth',
             'name': 'sciencedaily',
-            'url': 'https://www.sciencedaily.com/rss/top/environment.xml'
+            'url': 'http://www.sciencedaily.com/rss/top/environment.xml'
           }
         ]
     };
@@ -68,7 +68,7 @@ class App extends Component {
 
   loadfeedsources = (source) => {
     Feed.load(source.url, function(err, rss) {
-      return (rss.items.map((item) => {
+      return (this.state.feedsources.map((source) => {
         return (
           <li key={source.name}>
             <FeedSource updateStoriesProp={this.updateStories} stories={source.url} name={source.name} id={source.id}/>
@@ -78,47 +78,38 @@ class App extends Component {
     })
   };
 
-
-
-  loadFeedStories = (name, url) => {
-      Feed.load(url, function(err, rss) {
-        let feedstories = rss.items.map((item) => {
+  loadfeedstories = (name, url) => {
+      Feed.load(url.url, function(err, rss) {
+        return(rss.items.map((item) => {
           return (
             <div className="slide-list">
-                <li key={feedstories.name}>
-                  <FeedStory updateArticle={this.updateArticle} name={feedstories.name} 
-                  subtitle={moment(feedstories.created).fromNow()} author={feedstories.author} url={feedstories.readerArticle}/>
+                <li key={item.name}>
+                  <FeedStory updateArticle={this.updateArticle} name={item.name} 
+                  subtitle={moment(item.created).fromNow()} author={item.author} url={item.readerArticle}/>
                 </li> 
             </div>
           );
-        });
+        }));
       })
   };
 
   render() {
+    let feedsources = this.state.feedsources.map((source) => {  
+      return (
+        <li key={source.name}>
+          <FeedSource updateStoriesProp={this.updateStories} stories={source.url} name={source.name} id={source.id}/>
+        </li>
+      )
+    });
 
 
-    let feedsources = this.state.feedsources.map((feedsource) => { 
-        return (
-          <div>
-            {this.loadfeedsources(feedsource)}
+    let feedstories = this.state.feedsources.map((name, url) => {
+        return(
+          <div className="slide-list">
+            {this.loadfeedstories(name, url)}
           </div>
         )
     });
-
-    /*
-      Not sure if we need to go further into this.state.feedsources? The artcles are the items that were mapped
-      in the feedsources part. 
-    */
-
-    // let feedstories = Object.keys(this.state.feedstories).map((name, feedstory) => {
-    //     return(
-    //       <div className="slide-list">
-    //         {this.loadRssStories(name, feedstory)}
-    //       </div>
-    //     )
-    // });
-    
 
     //the objective of these blocks is to create the series of list items of those types (sources & stories)
     
@@ -131,6 +122,7 @@ class App extends Component {
     });
   
     /*let feedStories= this.state.feedSources.map(())*/
+    
 
     let stories = this.state.stories.map((story) => {
       return (
@@ -141,13 +133,14 @@ class App extends Component {
         </div>
       );
     });
+    
 
     let settings = {
       dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 7,
-      slidesToScroll: 1
+      slidesToScroll: 7
     };
 
     // iframe takes src prop to say what website to render inside aka whatever is in this.state.currentArticle
@@ -169,6 +162,7 @@ class App extends Component {
           <div className="article-list">
             <ul>
               {stories}
+              {feedstories}
             </ul>
           </div>
           <div className="reader">
